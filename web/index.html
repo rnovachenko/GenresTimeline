@@ -1,0 +1,41 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="/lib/raphael.js"></script>
+<script src="/lastfm.js"></script>
+<script src="/backend.js"></script>
+<script src="/utils.js"></script>
+<script src="/async-tools.js"></script>
+<script src="/ui.js"></script>
+<script src="/timeline.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+    $('#button').click(function () {
+        new GenresTimeline($('#username').val(), 'timeline-container').build();
+    });
+
+
+});
+</script>
+</head>
+<body>
+	<input id="username" value="fumoffu_ua"/>
+	<input id="button" type="button" value="get"/>
+	<div>
+		<div id="charts-progress" style="display: none">
+			Getting weekly charts... <span id="charts-done" style="display: none">Done!</span>
+			<div id="charts-progressbar" style="width: 400px"></div>
+		</div>
+		<div id="new-artists-progress" style="display: none">
+			Getting artist tags... <span id="new-artists-done" style="display: none">Done!</span>
+			<div id="new-artists-progressbar" style="width: 400px"></div>
+		</div>
+		<div id="timeline-container">
+		</div>
+	</div>
+</body>
+</html>
